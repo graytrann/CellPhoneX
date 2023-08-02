@@ -83,44 +83,11 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
-                    <div class="cart_item mt-3">
-                      <div class="cart_item_img">
-                        <img
-                          src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204"
-                          alt=""
-                        />
-                      </div>
-
-                      <div class="cart_item_info">
-                        <p>Iphone 14</p>
-                        <p>1.000.000</p>
-                      </div>
-                      <div class="cart_item_buttons">
-                        <button>+</button>
-                        <button>-</button>
-                      </div>
-                    </div>
-                    <div class="cart_item mt-3">
-                      <div class="cart_item_img">
-                        <img
-                          src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204"
-                          alt=""
-                        />
-                      </div>
-
-                      <div class="cart_item_info">
-                        <p>Iphone 14</p>
-                        <p>1.000.000</p>
-                      </div>
-                      <div class="cart_item_buttons">
-                        <button>+</button>
-                        <button>-</button>
-                      </div>
-                    </div>
+                  <div id="cart" class="modal-body">
+                    <p>Hiện chưa có sản phẩm trong giỏ hàng</p>
                   </div>
                   <div class="modal-footer">
-                    <div class="total price"><p>TỔNG TIỀN : 1000$</p></div>
+                    <div id="totalPrice" class="total price"></div>
                     <div>
                       <button>THANH TOÁN</button>
                     </div>
@@ -133,21 +100,7 @@
       </header>
       <div class="products mt-5">
         <div class="products_content">
-          <div id="products_list" class="products_list">
-            <div class="product_item">
-              <img
-                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphone14pro-202209_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1663611329204"
-                alt=""
-              />
-              <p>10000</p>
-              <p>Samsung</p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-                beatae obcaecati, quo blanditiis id et.
-              </p>
-              <button>Add to cart</button>
-            </div>
-          </div>
+          <div id="products_list" class="products_list"></div>
         </div>
       </div>
       <br />
