@@ -1,0 +1,22 @@
+#table {
+  tr {
+    th {
+      background-color: chocolate;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  #tblDanhSachSP {
+    td {
+      font-weight: bold;
+      text-align: center; /* Căn giữa chữ theo chiều ngang */
+      vertical-align: middle; /* Căn giữa chữ theo chiều dọc */
+      img {
+        object-fit: contain;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}

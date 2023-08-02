@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  color: $gray-button-color;
+}
+
+.modal.show {
+  position: fixed;
+  padding-right: 0px !important;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal.fade {
+  position: fixed;
+  padding-right: 0px !important;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  width: 300px;
+}
+
+.modal-footer {
+  display: block;
+  justify-content: initial;
+}
+
+.modal-body {
+  .cart_item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    &_info {
+      p {
+        margin: 0 0 0 5px;
+      }
+    }
+    &_buttons {
+      position: absolute;
+      right: 0;
+      button {
+        width: 35px;
+        background-color: orange;
+      }
+    }
+  }
+}

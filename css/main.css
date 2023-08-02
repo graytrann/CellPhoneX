@@ -1,0 +1,214 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  color: gray;
+}
+
+.modal.show {
+  position: fixed;
+  padding-right: 0px !important;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal.fade {
+  position: fixed;
+  padding-right: 0px !important;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  width: 300px;
+}
+
+.modal-footer {
+  display: block;
+  justify-content: initial;
+}
+
+.modal-body .cart_item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.modal-body .cart_item img {
+  width: 50px;
+  height: 50px;
+}
+.modal-body .cart_item_info p {
+  margin: 0 0 0 5px;
+}
+.modal-body .cart_item_buttons {
+  position: absolute;
+  right: 0;
+}
+.modal-body .cart_item_buttons button {
+  width: 35px;
+  background-color: orange;
+}
+
+#header .navbar-brand {
+  font-size: 50px;
+  color: red;
+}
+#header .navbar .nav-item .nav-link {
+  color: black;
+  transition: all 0.5s;
+  margin-left: 35px;
+}
+#header .navbar .nav-item .nav-link:hover {
+  color: orange;
+  transform: translateY(-10px);
+}
+#header .navbar .nav-item .nav-link i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+#table tr th {
+  background-color: chocolate;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+#table #tblDanhSachSP td {
+  font-weight: bold;
+  text-align: center; /* Căn giữa chữ theo chiều ngang */
+  vertical-align: middle; /* Căn giữa chữ theo chiều dọc */
+}
+#table #tblDanhSachSP td img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 200px;
+  height: 200px;
+}
+
+.products {
+  color: white;
+}
+.products .products_content .products_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột có độ rộng bằng nhau */
+  grid-gap: 10px; /* Khoảng cách giữa các sản phẩm */
+}
+.products .products_content .products_list .product_item {
+  padding: 10px;
+  text-align: center;
+  background-color: black;
+  border-radius: 10px;
+}
+.products .products_content .products_list .product_item img {
+  border-radius: 50px;
+  width: 95%;
+  padding-top: 10px;
+}
+.products .products_content .products_list .product_item p {
+  margin: 0;
+}
+
+.button-blue {
+  margin-left: 20px;
+  align-items: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+.button-blue:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.button-blue:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+button#btnThemSP {
+  transition: all 0.5s;
+}
+button#btnThemSP:hover {
+  transform: translateY(-10px);
+}
+
+.input {
+  position: relative;
+  font-size: 1.5em;
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+}
+.input *:not(span) {
+  position: relative;
+  display: inherit;
+  border-radius: inherit;
+  margin: 0;
+  border: none;
+  outline: none;
+  padding: 0 0.325em;
+  z-index: 1;
+}
+.input *:not(span):focus + span {
+  opacity: 1;
+  transform: scale(1);
+}
+.input span {
+  transform: scale(0.993, 0.94);
+  transition: transform 0.5s, opacity 0.25s;
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  margin: 4px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+}/*# sourceMappingURL=main.css.map */

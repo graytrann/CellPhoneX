@@ -1,0 +1,24 @@
+.products {
+  color: white;
+  .products_content {
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 cột có độ rộng bằng nhau */
+      grid-gap: 10px; /* Khoảng cách giữa các sản phẩm */
+      .product_item {
+        padding: 10px;
+        text-align: center;
+        background-color: black;
+        border-radius: 10px;
+        img {
+          border-radius: 50px;
+          width: 95%;
+          padding-top: 10px;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
