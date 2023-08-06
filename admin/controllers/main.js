@@ -396,20 +396,36 @@ function validation() {
     getElement("#spanBrandSP").innerHTML = "Vui lòng hãng sản phẩm";
   }
 
+  // if (isValid) {
+  //   let product = {
+  //     productName: getElement("#TenSP").value,
+  //     price: +getElement("#GiaSP").value,
+  //     screen: getElement("#screenSP").value,
+  //     backCamera: getElement("#screenBack").value,
+  //     frontCamera: getElement("#screenFront").value,
+  //     img: getElement("#HinhSP").value,
+  //     desc: getElement("#DescSP").value,
+  //     type: getElement("#loaiSP").value,
+  //   };
+
   if (isValid) {
-    let product = {
-      productName: getElement("#TenSP").value,
-      price: +getElement("#GiaSP").value,
-      screen: getElement("#screenSP").value,
-      backCamera: getElement("#screenBack").value,
-      frontCamera: getElement("#screenFront").value,
-      img: getElement("#HinhSP").value,
-      desc: getElement("#DescSP").value,
-      type: getElement("#loaiSP").value,
-    };
+    let product = new Product(
+      "không có id",
+      productName,
+      price,
+      screen,
+      backCamera,
+      frontCamera,
+      img,
+      desc,
+      type
+    );
 
     return product;
   }
+
+  //   return product;
+  // }
 
   return undefined;
 }

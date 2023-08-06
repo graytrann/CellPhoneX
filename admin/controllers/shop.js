@@ -1,4 +1,5 @@
 //SHOP
+
 function getProductsForShop() {
   apiGetProducts()
     .then((response) => {
@@ -75,6 +76,7 @@ function addToCart(productName, productImg, productPrice) {
     existingProduct.quantity++;
     console.log(existingProduct.quantity);
     displayCartItem2(cart.items);
+    localStorage.setItem("productsInCart", JSON.stringify(cart.items));
   } else {
     // Nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
     product = {
@@ -85,6 +87,7 @@ function addToCart(productName, productImg, productPrice) {
     };
     cart.items.push(product);
     displayCartItem2(cart.items);
+    localStorage.setItem("productsInCart", JSON.stringify(cart.items));
   }
 
   displayTotalPrice();
@@ -195,3 +198,45 @@ function displayTotalPrice() {
   let html = `<p>TỔNG TIỀN: ${total}$</p>`;
   document.getElementById("totalPrice").innerHTML = html;
 }
+
+function init() {
+  cart.items = JSON.parse(localStorage.getItem("productsInCart")) || [];
+  console.log(cart.items.length);
+  if (cart.items.length === 0) {
+    let html = `
+                    <p>Hiện chưa có sản phẩm trong giỏ hàng</p>
+                  `;
+    document.getElementById("cart").innerHTML = html;
+  } else {
+    cart.items.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    displayCartItem2(cart.items);
+    displayTotalPrice();
+  }
+}
+
+init();
+
+document.getElementById("thanhToan").onclick = function () {
+  if (cart.items.length === 0) {
+    html = `
+    <p>Không có sản phẩm nào để thanh toán</p>
+  `;
+
+    displayCartItem2(cart.items);
+    document.getElementById("cart").innerHTML = html;
+    displayTotalPrice();
+  } else {
+    localStorage.removeItem("productsInCart");
+    cart.items = JSON.parse(localStorage.getItem("productsInCart")) || [];
+    total = 0;
+    html = `
+                    <p>Bạn đã thanh toán hết sản phẩm trong giỏ hàng</p>
+                  `;
+
+    displayCartItem2(cart.items);
+    document.getElementById("cart").innerHTML = html;
+    displayTotalPrice();
+  }
+};
