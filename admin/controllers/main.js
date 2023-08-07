@@ -95,24 +95,38 @@ function createProduct() {
 
 // hàm xóa sản phẩm
 function deleteProduct(productId) {
-  apiDeleteProduct(productId)
-    .then(() => {
-      // Xóa thành công
-      return apiGetProducts();
-    })
-    .then((response) => {
-      // hiển thị trở lại
-      display(response.data);
-    })
-    .catch(() => {
-      console.log(error);
-    });
   Swal.fire({
-    position: "top-end",
-    icon: "success",
-    title: "XÓA THÀNH CÔNG",
-    showConfirmButton: false,
-    timer: 1500,
+    title: "Bạn có muốn xóa sản phẩm?",
+    showDenyButton: true,
+    // showCancelButton: true,
+    confirmButtonText: "Xóa",
+    denyButtonText: `Không`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      apiDeleteProduct(productId)
+        .then(() => {
+          // Xóa thành công
+          return apiGetProducts();
+        })
+        .then((response) => {
+          // hiển thị trở lại
+          display(response.data);
+        })
+        .catch(() => {
+          console.log(error);
+        });
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "XÓA THÀNH CÔNG",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      Swal.fire("Đã Xóa!", "", "success");
+    } else if (result.isDenied) {
+      // Swal.fire('Changes are not saved', '', 'info')
+    }
   });
 }
 
