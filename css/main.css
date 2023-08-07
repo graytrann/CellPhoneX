@@ -10,7 +10,7 @@ html {
   color: gray;
 }
 
-.modal.show {
+#shop.modal.show {
   position: fixed;
   padding-right: 0px !important;
   top: 10px;
@@ -23,7 +23,7 @@ html {
   outline: 0;
 }
 
-.modal.fade {
+#shop.modal.fade {
   position: fixed;
   padding-right: 0px !important;
   top: 10px;
@@ -36,34 +36,50 @@ html {
   outline: 0;
 }
 
-.modal-dialog {
-  width: 300px;
+#shop .modal-dialog {
+  width: 400px;
 }
 
-.modal-footer {
+#shop .modal-footer {
   display: block;
   justify-content: initial;
 }
 
-.modal-body .cart_item {
+#shop .modal-body .cart_item {
   display: flex;
   align-items: center;
   position: relative;
 }
-.modal-body .cart_item img {
+#shop .modal-body .cart_item img {
   width: 50px;
   height: 50px;
 }
-.modal-body .cart_item_info p {
+#shop .modal-body .cart_item_info p {
   margin: 0 0 0 5px;
 }
-.modal-body .cart_item_buttons {
+#shop .modal-body .cart_item_buttons {
   position: absolute;
   right: 0;
 }
-.modal-body .cart_item_buttons button {
+#shop .modal-body .cart_item_buttons i {
+  color: white;
+}
+#shop .modal-body .cart_item_buttons button {
+  transition: all 0.5s;
   width: 35px;
   background-color: orange;
+}
+#shop .modal-body .cart_item_buttons button:nth-child(1) {
+  background-color: green;
+}
+#shop .modal-body .cart_item_buttons button:nth-child(2) {
+  background-color: blue;
+}
+#shop .modal-body .cart_item_buttons button:nth-child(3) {
+  background-color: red;
+}
+#shop .modal-body .cart_item_buttons button:hover {
+  background-color: black;
 }
 
 #header .navbar-brand {
@@ -123,6 +139,9 @@ html {
 }
 .products .products_content .products_list .product_item p {
   margin: 0;
+}
+.products .products_content .products_list .product_item p:nth-child(4) {
+  height: 50px;
 }
 
 .button-blue {

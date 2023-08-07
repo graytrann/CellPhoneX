@@ -17,6 +17,9 @@
         }
         p {
           margin: 0;
+          &:nth-child(4) {
+            height: 50px; // Sử dụng biến màu đỏ
+          }
         }
       }
     }

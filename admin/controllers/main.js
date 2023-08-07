@@ -1,3 +1,4 @@
+let isSubmitted = false;
 // lấy sản phẩm
 function getProducts() {
   apiGetProducts()
@@ -10,7 +11,8 @@ function getProducts() {
     });
 }
 
-function getProductsSort1() {
+// lấy danh sách sản phẩm từ bé đến cao
+function getProductsIncrease() {
   apiGetProducts()
     .then((response) => {
       console.log(response.data);
@@ -26,7 +28,8 @@ function getProductsSort1() {
   Swal.fire("Giá sản phẩm từ thấp đến cao");
 }
 
-function getProductsSort2() {
+// lấy danh sách sản phẩm từ cao đến bé
+function getProductsDecrease() {
   apiGetProducts()
     .then((response) => {
       // Sắp xếp danh sách sản phẩm theo giá từ cao đến thấp
@@ -43,6 +46,7 @@ function getProductsSort2() {
 
 getProducts();
 
+// hàm tạo sản phẩm
 function createProduct() {
   // DOM và khởi tạo các object product
   // let product = {
@@ -55,7 +59,7 @@ function createProduct() {
   //   desc: getElement("#DescSP").value,
   //   type: getElement("#loaiSP").value,
   // };
-
+  isSubmitted = true;
   let product = validation();
   if (!product) {
     return;
@@ -89,6 +93,7 @@ function createProduct() {
   reset();
 }
 
+// hàm xóa sản phẩm
 function deleteProduct(productId) {
   apiDeleteProduct(productId)
     .then(() => {
@@ -247,7 +252,7 @@ function reset() {
   getElement("#spanBrandSP").value = "";
 }
 
-//search
+//search - tìm sản phẩm trong input
 getElement("#txtSearch").onkeypress = (event) => {
   if (event.key !== "Enter") {
     return;
@@ -261,7 +266,7 @@ getElement("#txtSearch").onkeypress = (event) => {
       console.log(error);
     });
 };
-// DOM
+// DOM - Nút thêm sản phẩm
 getElement("#btnThemSP").onclick = () => {
   getElement(".modal-title").innerHTML = "Thêm sản phẩm";
   getElement(".modal-footer").innerHTML = `
@@ -271,6 +276,7 @@ getElement("#btnThemSP").onclick = () => {
   reset();
 };
 
+// Hàm tìm sản phẩm
 function find() {
   apiGetProducts(getElement("#txtSearch").value)
     .then((response) => {
@@ -338,7 +344,7 @@ function validation() {
     getElement("#spanGiaSP").innerHTML = "Giá sản phẩm không được để trống";
   } else if (!checkPrice(price)) {
     isValid = false;
-    getElement("#spanGiaSP").innerHTML = "Tên sản phẩm không được chứa chuỗi ";
+    getElement("#spanGiaSP").innerHTML = "Giá sản phẩm không được chứa chuỗi ";
   }
 
   // product screen
@@ -429,3 +435,93 @@ function validation() {
 
   return undefined;
 }
+
+// OnInput Validation
+
+// Tên Sản Phẩm
+getElement("#TenSP").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let productNameSpan = getElement("#spanTenSP");
+
+  if (isRequired(event.target.value)) {
+    productNameSpan.innerHTML = "";
+  }
+};
+
+// Giá Sản Phẩm
+getElement("#GiaSP").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let priceSpan = getElement("#spanGiaSP");
+
+  if (isRequired(event.target.value)) {
+    priceSpan.innerHTML = "";
+  }
+};
+
+// Màn Hình
+getElement("#screenSP").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let screenSpan = getElement("#spanMHSP");
+
+  if (isRequired(event.target.value)) {
+    screenSpan.innerHTML = "";
+  }
+};
+
+// Màn Hình sau screenBack
+getElement("#screenBack").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let backScreenSpan = getElement("#spanBackSP");
+
+  if (isRequired(event.target.value)) {
+    backScreenSpan.innerHTML = "";
+  }
+};
+
+// Màn hình trước screenFront
+getElement("#screenFront").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let frontScreenSpan = getElement("#spanFrontSP");
+
+  if (isRequired(event.target.value)) {
+    frontScreenSpan.innerHTML = "";
+  }
+};
+
+// Image sản phẩm
+getElement("#HinhSP").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let imgSpan = getElement("#spanImgSP");
+
+  if (isRequired(event.target.value)) {
+    imgSpan.innerHTML = "";
+  }
+};
+
+// Mô tả sản phẩm
+getElement("#DescSP").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let descSpan = getElement("#spanDescSP");
+
+  if (isRequired(event.target.value)) {
+    descSpan.innerHTML = "";
+  }
+};
+
+// Loại sản phẩm
+getElement("#loaiSP").oninput = (event) => {
+  if (!isSubmitted) return;
+
+  let brandSpan = getElement("#spanBrandSP");
+
+  if (isRequired(event.target.value)) {
+    brandSpan.innerHTML = "";
+  }
+};

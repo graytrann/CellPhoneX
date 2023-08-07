@@ -9,7 +9,7 @@ html {
   color: $gray-button-color;
 }
 
-.modal.show {
+#shop.modal.show {
   position: fixed;
   padding-right: 0px !important;
   top: 10px;
@@ -22,7 +22,7 @@ html {
   outline: 0;
 }
 
-.modal.fade {
+#shop.modal.fade {
   position: fixed;
   padding-right: 0px !important;
   top: 10px;
@@ -35,16 +35,16 @@ html {
   outline: 0;
 }
 
-.modal-dialog {
-  width: 300px;
+#shop .modal-dialog {
+  width: 400px;
 }
 
-.modal-footer {
+#shop .modal-footer {
   display: block;
   justify-content: initial;
 }
 
-.modal-body {
+#shop .modal-body {
   .cart_item {
     display: flex;
     align-items: center;
@@ -59,11 +59,27 @@ html {
       }
     }
     &_buttons {
+      i {
+        color: white;
+      }
       position: absolute;
       right: 0;
       button {
+        transition: all 0.5s;
         width: 35px;
         background-color: orange;
+        &:nth-child(1) {
+          background-color: green; // Sử dụng biến màu đỏ
+        }
+        &:nth-child(2) {
+          background-color: blue; // Sử dụng biến màu đỏ
+        }
+        &:nth-child(3) {
+          background-color: red; // Sử dụng biến màu đỏ
+        }
+        &:hover{
+          background-color: black;
+        }
       }
     }
   }
