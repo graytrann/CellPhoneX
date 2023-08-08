@@ -1,5 +1,5 @@
 .products {
-  color: white;
+  color: black;
   .products_content {
     .products_list {
       display: grid;
@@ -15,9 +15,12 @@
           width: 95%;
           padding-top: 10px;
         }
-        p {
+        h4 {
+          height: 50px;
+        }
+        h6 {
           margin: 0;
-          &:nth-child(4) {
+          &.active {
             height: 50px; // Sử dụng biến màu đỏ
           }
         }

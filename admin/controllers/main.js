@@ -222,7 +222,7 @@ function display(products) {
         <tr>
             <td>${index + 1}</td>
             <td>${product.productName}</td>
-            <td>${product.price}</td>
+            <td>${product.price.toLocaleString()}</td>
             <td>
                 <img src="${product.img}" width="100px" height="150px" />
             </td>
@@ -432,7 +432,7 @@ function validation() {
     let product = new Product(
       "không có id",
       productName,
-      price,
+      +price,
       screen,
       backCamera,
       frontCamera,
