@@ -158,6 +158,8 @@ function selectProduct(productId) {
     .catch((error) => {
       console.log(error);
     });
+
+  resetSpan();
 }
 
 // cập nhật sản phẩm
@@ -256,14 +258,26 @@ function reset() {
   getElement("#loaiSP").value = "";
 
   // spans
-  getElement("#spanTenSP").value = "";
-  getElement("#spanGiaSP").value = "";
-  getElement("#spanMHSP").value = "";
-  getElement("#spanBackSP").value = "";
-  getElement("#spanFrontSP").value = "";
-  getElement("#spanImgSP").value = "";
-  getElement("#spanDescSP").value = "";
-  getElement("#spanBrandSP").value = "";
+  getElement("#spanTenSP").innerHTML = "";
+  getElement("#spanGiaSP").innerHTML = "";
+  getElement("#spanMHSP").innerHTML = "";
+  getElement("#spanBackSP").innerHTML = "";
+  getElement("#spanFrontSP").innerHTML = "";
+  getElement("#spanImgSP").innerHTML = "";
+  getElement("#spanDescSP").innerHTML = "";
+  getElement("#spanBrandSP").innerHTML = "";
+}
+
+function resetSpan() {
+  // spans
+  getElement("#spanTenSP").innerHTML = "";
+  getElement("#spanGiaSP").innerHTML = "";
+  getElement("#spanMHSP").innerHTML = "";
+  getElement("#spanBackSP").innerHTML = "";
+  getElement("#spanFrontSP").innerHTML = "";
+  getElement("#spanImgSP").innerHTML = "";
+  getElement("#spanDescSP").innerHTML = "";
+  getElement("#spanBrandSP").innerHTML = "";
 }
 
 //search - tìm sản phẩm trong input
