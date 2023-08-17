@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cell Phone X</title>
 
     <link
@@ -16,130 +16,138 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../css/main.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- Header -->
-            <header id="header">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#"
-                        >CELLPHONE-<i class="fa fa-phone"></i
-                    ></a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+      <!-- Header -->
+      <header id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"
+            >CELLPHONE-<i class="fa fa-phone"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="../../admin/views/index.html"
-                            ><i class="fa fa-user"></i>ADMIN
-                            <span class="sr-only">(current)</span></a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../customer/view/shopping.html"
-                            ><i class="fa fa-shopping-bag"></i>SHOPPING</a
-                            >
-                        </li>
-                        </ul>
-                    </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/index.html"
+                  ><i class="fa fa-user"></i>ADMIN
+                  <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../customer/view/shopping.html"
+                  ><i class="fa fa-shopping-bag"></i>SHOPPING</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                    <!-- Giỏ hàng -->
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-toggle="modal"
-                        data-target="#shop"
-                    >
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
-                    <!-- Giỏ hàng -->
+          <!-- Giỏ hàng -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#shop"
+          >
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+          <!-- Giỏ hàng -->
 
-                    <!-- Model giỏ hàng -->
-                    <div
-                    class="modal fade"
-                    id="shop"
-                    tabindex="-1" 
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                    >
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">GIỎ HÀNG</h5>
-                            <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                            >
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div id="cart" class="modal-body">
-                            <p>Hiện chưa có sản phẩm trong giỏ hàng</p>
-                        </div>
-                        <div class="modal-footer">
-                            <div id="totalPrice" class="total price"></div>
-                            <div>
-                            <button class="btn btn-success" id="thanhToan">THANH TOÁN</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Model giỏ hàng -->
-                </nav>
-            </header>
-        <!-- End Header -->
-
-        <!-- Search -->
-        <div class="col-md-12 mt-4 mb-4">
-            <div class="input-group mb-3">
-                <input
-                    id="txtSearch"
-                    type="text"
-                    class="form-control"
-                    placeholder="Nhập từ khóa"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                />
-                <div class="input-group-append">
-                    <span
-                        class="input-group-text"
-                        id="basic-addon2"
-                        onclick=""
-                        >
-                        <i class="fa fa-search"></i>
-                    </span>
+          <!-- Model giỏ hàng -->
+          <div
+            class="modal fade"
+            id="shop"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">GIỎ HÀNG</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                <select id="productSelect">
-                    <option value="active">Chọn loại sản phẩm</option>
-                    <option onchange="onProductSelectChange()" class="type" value="Iphone">Iphone</option>
-                    <option onchange="onProductSelectChange()" class="type" value="Samsung">Samsung</option>
-                </select>
+                <div id="cart" class="modal-body">
+                  <p>Hiện chưa có sản phẩm trong giỏ hàng</p>
+                </div>
+                <div class="modal-footer">
+                  <div id="totalPrice" class="total price"></div>
+                  <div>
+                    <button class="btn btn-success" id="thanhToan">
+                      THANH TOÁN
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <!-- Model giỏ hàng -->
+        </nav>
+      </header>
+      <!-- End Header -->
+
+      <!-- Search -->
+      <div class="col-md-12 mt-4 mb-4">
+        <div class="input-group mb-3">
+          <input
+            id="txtSearch"
+            type="text"
+            class="form-control"
+            placeholder="Nhập từ khóa"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2" onclick="">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+          <select id="productSelect">
+            <option value="active">Chọn loại sản phẩm</option>
+            <option
+              onchange="onProductSelectChange()"
+              class="type"
+              value="Iphone"
+            >
+              Iphone
+            </option>
+            <option
+              onchange="onProductSelectChange()"
+              class="type"
+              value="Samsung"
+            >
+              Samsung
+            </option>
+          </select>
         </div>
-        <!-- Search -->
+      </div>
+      <!-- Search -->
 
-        <!-- BEGIN SMARTPHONE -->
-            <div class="products mt-5">
-                <div class="products_content">
-                    <div class="products_list" id="products_list">
-
-                    </div>
-                </div>
-            </div>
-            <!-- <section id="smartphone" class="container-fluid pt-5 pb-5">
+      <!-- BEGIN SMARTPHONE -->
+      <div class="products mt-5">
+        <div class="products_content">
+          <div class="products_list" id="products_list"></div>
+        </div>
+      </div>
+      <!-- <section id="smartphone" class="container-fluid pt-5 pb-5">
         <h1 class="text-white text-center">BEST SMARTPHONE</h1>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-lg-3">
@@ -188,34 +196,32 @@
           </div>
         </div>
     </section> -->
-        <!-- END SMARTPHONE -->
+      <!-- END SMARTPHONE -->
     </div>
 
-    
-
     <style>
-        #container {
-          min-width: 310px;
-          max-width: 800px;
-          height: 400px;
-          margin: 0 auto;
-        }
+      #container {
+        min-width: 310px;
+        max-width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
     </style>
 
     <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
     ></script>
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
     ></script>
     <script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
     ></script>
 
     <!-- AXIOS -->
@@ -223,16 +229,14 @@
     <!-- END-AXIOS -->
 
     <!-- sweet-alert -->
-    <script   
-        src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
     <link
-        href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css"
-        rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css"
+      rel="stylesheet"
     />
 
     <script src="../model/customerProduct.js"></script>
     <script src="../services/customerproductAPI.js"></script>
     <script src="../controller/customershop.js"></script>
-</body>
+  </body>
 </html>
